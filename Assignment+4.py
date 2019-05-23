@@ -37,8 +37,6 @@ states = {'OH': 'Ohio', 'KY': 'Kentucky', 'AS': 'American Samoa', 'NV': 'Nevada'
 def get_list_of_university_towns():
     import pandas as pd
     import numpy as np
-    from scipy.stats import ttest_ind
-
     
     towns = open("university_towns.txt", "r")
 
@@ -75,7 +73,6 @@ get_list_of_university_towns()
 def get_recession_start():
     import pandas as pd
     import numpy as np
-    from scipy.stats import ttest_ind
     
     DF_Recession = pd.read_excel("gdplev.xls", skiprows = (0,1,2,3,4,5,6))
     DF_Recession.columns = ("Scrap1", "Scrap2", 
@@ -126,7 +123,6 @@ get_recession_start()
 def get_recession_end():
     import pandas as pd
     import numpy as np
-    from scipy.stats import ttest_ind
     
     DF_Recession = pd.read_excel("gdplev.xls", skiprows = (0,1,2,3,4,5,6))
     DF_Recession.columns = ("Scrap1", "Scrap2", 
@@ -176,7 +172,6 @@ get_recession_end()
 def get_recession_bottom():
     import pandas as pd
     import numpy as np
-    from scipy.stats import ttest_ind
     
     DF_Recession = pd.read_excel("gdplev.xls", skiprows = (0,1,2,3,4,5,6))
     DF_Recession.columns = ("Scrap1", "Scrap2", 
@@ -233,6 +228,7 @@ get_recession_bottom()
 def convert_housing_data_to_quarters():
     import numpy as np
     import pandas as pd
+    
     DF_City_Sales_Prices = pd.read_csv("City_Zhvi_AllHomes.csv")
     list(DF_City_Sales_Prices.columns)
     DF_City_Sales_Prices = DF_City_Sales_Prices.drop(labels = DF_City_Sales_Prices.iloc[:, 6:-200], axis = 1)
